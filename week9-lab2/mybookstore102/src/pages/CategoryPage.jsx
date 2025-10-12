@@ -4,15 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 //import LoadingSpinner from '../components/LoadingSpinner';
 //import './BookDetailPage.css';
 
-const AboutPage = () => {
+const CategoryPage = () => {
       return (
           <div>
               <h1>Welcome to the CategoryPage</h1>
-              <p>This is the CategoryPage of the bookstore application.</p>
+              <p>This is the AboutPage of the bookstore application.</p>
               <p>Explore our collection of books and find your next read!</p>
               <Link to="/books">Go to Book List</Link>
           </div>
       );
   }
 
-export default AboutPage;
+export default CategoryPage;

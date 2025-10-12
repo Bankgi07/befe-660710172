@@ -7,7 +7,7 @@ const NotFound = () => {
     <div className="min-h-screen bg-gradient-to-br from-viridian-100 to-purple-100 
       flex items-center justify-center px-4">
       <div className="text-center">
-        <h1 className="text-9xl font-bold text-viridian-600 mb-4">404</h1>
+        <h1 className="text-6xl font-bold text-viridian-600 mb-4">404</h1>
         <p className="text-3xl font-semibold text-gray-800 mb-4">
           ไม่พบหน้าที่คุณค้นหา
         </p>
