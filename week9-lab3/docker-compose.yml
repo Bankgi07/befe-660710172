@@ -1,10 +1,10 @@
-services :
-  nginx :
-    image : nginx:alpine
-    ports :
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
       - "80:80"
-    volumes :
+    volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-    extra_hosts :
+    extra_hosts:
       - "host.docker.internal:host-gateway"
-    restart : unless-stopped
+    restart: unless-stopped

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
 import { HeartIcon, ShoppingCartIcon, StarIcon } from '@heroicons/react/outline';
 import { HeartIcon as HeartSolidIcon, StarIcon as StarSolidIcon } from '@heroicons/react/solid';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 
 const BookCard = ({ book }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -23,15 +24,16 @@ const BookCard = ({ book }) => {
     <Link to={`/books/${book.id}`} className="block">
       <div className="bg-white rounded-xl shadow-lg overflow-hidden group 
         hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-        
+
         {/* Book Cover */}
         <div className="relative h-80 bg-gradient-to-br from-gray-100 to-gray-200">
-          <img 
-            src={book.coverImage || '/images/book-placeholder.jpg'} 
+          <img
+            // ถ้า book.coverImage ไม่มีค่า, ให้ใช้ Path ที่ถูกต้องแทน
+            src={book.coverImage || '/images/books/placeholder-book.jpg'}
             alt={book.title}
             className="w-full h-full object-cover"
           />
-          
+
           {/* Badges */}
           {book.isNew && (
             <span className="absolute top-3 left-3 bg-green-500 text-white px-3 py-1 
@@ -45,13 +47,13 @@ const BookCard = ({ book }) => {
               -{book.discount}%
             </span>
           )}
-          
+
           {/* Quick Actions - Show on Hover */}
           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 
             transition-all duration-300 flex items-center justify-center">
             <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 
               flex gap-3">
-              <button 
+              <button
                 onClick={handleToggleFavorite}
                 className="p-3 bg-white rounded-full hover:bg-red-50 transition-colors"
               >
@@ -61,34 +63,33 @@ const BookCard = ({ book }) => {
                   <HeartIcon className="h-6 w-6 text-gray-700" />
                 )}
               </button>
-              <button 
+              <button
                 onClick={handleAddToCart}
                 className="p-3 bg-white rounded-full hover:bg-viridian-50 transition-colors"
               >
-                <ShoppingCartIcon className={`h-6 w-6 ${
-                  isInCart ? 'text-viridian-600' : 'text-gray-700'
-                }`} />
+                <ShoppingCartIcon className={`h-6 w-6 ${isInCart ? 'text-viridian-600' : 'text-gray-700'
+                  }`} />
               </button>
             </div>
           </div>
         </div>
-        
+
         {/* Book Details */}
         <div className="p-5">
           {/* Category */}
           <p className="text-xs text-viridian-600 font-semibold uppercase tracking-wider mb-2">
             {book.category}
           </p>
-          
+
           {/* Title */}
           <h3 className="text-lg font-bold text-gray-900 mb-1 line-clamp-1 
             group-hover:text-viridian-600 transition-colors">
             {book.title}
           </h3>
-          
+
           {/* Author */}
           <p className="text-sm text-gray-600 mb-3">โดย {book.author}</p>
-          
+
           {/* Rating */}
           <div className="flex items-center mb-3">
             <div className="flex text-yellow-400">
@@ -104,7 +105,7 @@ const BookCard = ({ book }) => {
               ({book.reviews || 0} รีวิว)
             </span>
           </div>
-          
+
           {/* Price */}
           <div className="flex items-center justify-between">
             <div>
@@ -117,12 +118,12 @@ const BookCard = ({ book }) => {
                 ฿{book.price}
               </span>
             </div>
-            
-            <button 
+
+            <button
               onClick={handleAddToCart}
               className={`px-4 py-2 rounded-lg font-semibold transition-all duration-200 
-                ${isInCart 
-                  ? 'bg-green-500 text-white hover:bg-green-600' 
+                ${isInCart
+                  ? 'bg-green-500 text-white hover:bg-green-600'
                   : 'bg-viridian-600 text-white hover:bg-viridian-700'
                 }`}>
               {isInCart ? 'ในตะกร้า' : 'เพิ่มลงตะกร้า'}

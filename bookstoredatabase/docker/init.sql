@@ -29,7 +29,7 @@ EXECUTE FUNCTION update_modified_column();
 CREATE INDEX idx_books_title ON books(title);
 
 -- เพิ่มข้อมูลตัวอย่าง
-INSERT INTO books (id, title, author, isbn, year, price) VALUES
-    (1, 'Fundamental of Deep Learning in Practice', 'Nuttachot Promrit and Sajjaporn Waijanya', '978-1234567890', 2023, 599.00),
-    (2, 'Practical DevOps and Cloud Engineering', 'Nuttachot Promrit', '978-0987654321', 2024, 500.00),
-    (3, 'Mastering Golang for E-commerce Back End Development', 'Nuttachot Promrit', '978-1111222233', 2023, 450.00);
+INSERT INTO books (title, author, isbn, year, price) VALUES
+    ('Fundamental of Deep Learning in Practice', 'Nuttachot Promrit and Sajjaporn Waijanya', '978-1234567890', 2023, 599.00),
+    ('Practical DevOps and Cloud Engineering', 'Nuttachot Promrit', '978-0987654321', 2024, 500.00),
+    ('Mastering Golang for E-commerce Back End Development', 'Nuttachot Promrit', '978-1111222233', 2023, 450.00);
