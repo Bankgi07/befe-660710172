@@ -82,3 +82,4 @@ SELECT
     id
 FROM permissions
 WHERE name = 'books:read';
+--

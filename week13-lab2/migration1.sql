@@ -42,3 +42,4 @@ VALUES (
     '$2a$12$BMF2D4vNPNXHQZ6IGRKAaePuzhhAsxHVRexuoHt2./cwVQfV36aPG',
     true
 );
+--

@@ -49,3 +49,4 @@ INSERT INTO user_roles (user_id, role_id)
 SELECT
     (SELECT id FROM users WHERE username = 'nuttachot'),
     (SELECT id FROM roles WHERE name = 'user');
+    --
